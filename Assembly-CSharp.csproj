@@ -61,7 +61,11 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\CharacterMovement.cs" />
     <Compile Include="Assets\Scripts\DragAndDrop.cs" />
+    <Compile Include="Assets\Scripts\DragAndDrop2.cs" />
     <Compile Include="Assets\Scripts\FPS.cs" />
+    <Compile Include="Assets\Scripts\Movement.cs" />
+    <Compile Include="Assets\Scripts\Movement2.cs" />
+    <Compile Include="Assets\Scripts\Shoot.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/albeca/Documents/GitHub/STA/STA_Project/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

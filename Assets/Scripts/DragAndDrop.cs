@@ -12,7 +12,7 @@ public class DragAndDrop : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+        Input.multiTouchEnabled = true;
         rb = GetComponent<Rigidbody2D>();
         PhysicsMaterial2D mat = new PhysicsMaterial2D();
         GetComponent<CircleCollider2D > ().sharedMaterial = mat;
@@ -22,7 +22,7 @@ public class DragAndDrop : MonoBehaviour {
 	void Update () {
 		if (Input.touchCount > 0)
         {
-
+            Input.multiTouchEnabled = true;
             Touch touch = Input.GetTouch(0);
 
             Vector2 touchPos = Camera.main.ScreenToWorldPoint(touch.position);
@@ -44,17 +44,17 @@ public class DragAndDrop : MonoBehaviour {
                             rb.freezeRotation = true;
                             rb.velocity = new Vector2(0, 0);
                             rb.gravityScale = 0;
-                            GetComponent<CircleCollider2D>().sharedMaterial = null;
+                            GetComponent<BoxCollider2D>().sharedMaterial = null;
                         }
                     }
                     break;
 
                 case TouchPhase.Moved:
-                    if (transform.position.x >= -2.46 && transform.position.x <= 2.46)
-                    {
+                   // if (transform.position.x > -2.43 && transform.position.x < 2.43)
+                   // {
                         if (GetComponent<Collider2D>() == Physics2D.OverlapPoint(touchPos) && moveAllowed)
-                            rb.MovePosition(new Vector2(touchPos.x - deltaX, /*touchPos.y - deltaY*/-4.29f));
-                    }
+                            rb.MovePosition(new Vector2(touchPos.x - deltaX, /*touchPos.y - deltaY*/4.29f));
+                   // }
                     break;
 
                 case TouchPhase.Ended:
